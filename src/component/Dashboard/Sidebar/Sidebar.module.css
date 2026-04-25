@@ -1,0 +1,31 @@
+.sidebar {
+  min-height: calc(100vh - 80px) ;
+  background-color: var(--main-color);
+  width: 320px;
+  color: var(--white-color);
+}
+
+.header {
+  color: #6882A1;
+}
+
+
+/* 
+position: absolute;
+width: 109.07px;
+height: 20px;
+left: 48.19px;
+top: 17px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 13px;
+line-height: 20px;
+display: flex;
+align-items: center;
+letter-spacing: 1px;
+text-transform: uppercase;
+
+color: #6882A1; */ 
+

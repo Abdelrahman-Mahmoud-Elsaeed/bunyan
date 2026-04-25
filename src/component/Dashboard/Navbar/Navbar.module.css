@@ -1,0 +1,18 @@
+.pos {
+  top: -2px;
+}
+
+.notification {
+  position: absolute;
+  background: var(--second-color);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: -12px;
+  left: 24px;
+}
+
+
+.image {
+  height: 40px;
+}
