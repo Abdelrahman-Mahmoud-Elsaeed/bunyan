@@ -1,13 +1,19 @@
 import logo from "@assets/59d5178ad546f4ca3aa995c36fb10fe1ffbe2f43.png";
-import styles from "./Navbar.module.css"
+import styles from "./Navbar.module.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faBell, faSortDown,faX } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faBell,
+  faSortDown,
+  faX,
+} from "@fortawesome/free-solid-svg-icons";
 
-function Navbar({isOpen,setIsOpen}) {
-
+function Navbar({ isOpen, setIsOpen }) {
   return (
-    <nav className="d-flex justify-content-between align-items-center mx-3 py-3">
+    <nav
+      className={`d-flex justify-content-between align-items-center  shadow-sm p-3 ${styles.nav} `}
+    >
       <div className="d-flex">
         <button
           className="navbar-toggler mx-3 me-4 "
@@ -22,19 +28,24 @@ function Navbar({isOpen,setIsOpen}) {
           <FontAwesomeIcon icon={isOpen ? faX : faBars} className="fs-3" />
         </button>
         <div>
-          <img src={logo} className={"img-fluid " + styles.image} />
+          <img src={logo} className={`img-fluid  ${styles.image}`} />
         </div>
       </div>
       <div className="d-flex justify-content-between align-items-center">
         <div className="me-4 position-relative ">
-          <div className={"d-flex justify-content-center align-items-center " + styles.notification}>
+          <div
+            className={`d-flex justify-content-center align-items-center ${styles.notification}`}
+          >
             <p className="m-0 text-white">4</p>
           </div>
-          <FontAwesomeIcon icon={faBell} className="fs-4"/>
+          <FontAwesomeIcon icon={faBell} className="fs-4" />
         </div>
         <div className="d-flex pointer position-relative" role="button">
           <p className="m-0">Super Admin</p>
-          <FontAwesomeIcon icon={faSortDown} className={"fs-5 position-relative " + styles.pos }/>
+          <FontAwesomeIcon
+            icon={faSortDown}
+            className={`fs-5 position-relative ${styles.pos}`}
+          />
         </div>
       </div>
     </nav>

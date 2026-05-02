@@ -1,7 +1,7 @@
 .sidebar {
-  min-height: calc(100vh - 80px) ;
+  min-height: var(100vh - 120px);
   background-color: var(--main-color);
-  width: 320px;
+  width: 300px;
   color: var(--white-color);
 }
 
@@ -9,6 +9,43 @@
   color: #6882A1;
 }
 
+.navItem {
+  background-color: rgba(255, 255, 255,0);
+  color: rgba(255, 255, 255,1);
+  transition: background-color 0.1s ease-in-out;
+}
+
+.navItem:hover {
+  background-color: rgba(255, 255, 255,0.2);
+}
+
+.active {
+  background-color: rgba(255, 255, 255,1) !important;
+}
+
+.active .navTitle {
+  color: #000;
+}
+
+.active .icon {
+  color: #000;
+}
+
+
+.navTitle {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.icon {
+  color:#fff;
+}
 
 /* 
 position: absolute;

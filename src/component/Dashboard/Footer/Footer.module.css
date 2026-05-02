@@ -1,0 +1,15 @@
+.footer {
+  background-color: var(--main-color);
+  color: var(--white-color);
+  height: 40px;
+}
+
+.span {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+
+  color: var(--white-color);
+}

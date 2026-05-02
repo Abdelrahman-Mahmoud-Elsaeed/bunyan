@@ -1,38 +1,41 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUsers ,faBuilding, faCity , faGlobe,faCommentDots} from "@fortawesome/free-solid-svg-icons";
+import {
+  faUsers,
+  faBuilding,
+  faCity,
+  faGlobe,
+  faCommentDots,
+  faChartLine,
+} from "@fortawesome/free-solid-svg-icons";
 
-import styles from "./Sidebar.module.css"
+import styles from "./Sidebar.module.css";
 
-function Sidebar({isOpen}) {
+function Sidebar({ isOpen }) {
+  const Links = [
+    { title: "Status", icon: faChartLine , active:true},
+    { title: "User Management", icon: faUsers , active:false },
+    { title: "Projects Management", icon: faBuilding  , active:false},
+    { title: "Developers Management", icon: faCity , active:false},
+    { title: "Website CMS", icon: faGlobe , active:false},
+    { title: "Live Chat", icon: faCommentDots , active:false},
+  ];
   return (
-    <aside className={`${styles.sidebar} ${isOpen ? "d-flex" : "d-none"} `}>
-      <ul className="list-unstyled">
-        <div className={`${styles.header} text-center my-3`}>
+    <aside className={`${styles.sidebar} ${isOpen ? "d-flex" : "d-none"}`}>
+      <ul className="list-unstyled w-100">
+        <div className={`${styles.header} px-3 my-3`}>
           <h3>Dashboards</h3>
         </div>
-        <div className="d-flex m-2 py-2  align-items-center cursor-pointer">
-          <FontAwesomeIcon icon={faUsers} className="me-3 fs-4"/>
-          <h3 className="m-0 fs-4">User Management</h3>
-        </div>
-        <div className="d-flex m-2 py-2  align-items-center cursor-pointer">
-          <FontAwesomeIcon icon={faBuilding} className="me-3 fs-4"/>
-          <h3 className="m-0 fs-4">Projects Management</h3>
-        </div>
-        <div className="d-flex m-2 py-2  align-items-center cursor-pointer">
-          <FontAwesomeIcon icon={faCity} className="me-3 fs-4"/>
-          <h3 className="m-0 fs-4">Developers Management</h3>
-        </div>
-        <div className="d-flex m-2 py-2  align-items-center cursor-pointer">
-          <FontAwesomeIcon icon={faGlobe} className="me-3 fs-4"/>
-          <h3 className="m-0 fs-4">Website CMS</h3>
-        </div>
-        <div className="d-flex m-2 py-2  align-items-center cursor-pointer">
-          <FontAwesomeIcon icon={faCommentDots} className="me-3 fs-4"/>
-          <h3 className="m-0 fs-4">Live Chat</h3>
-        </div>
+        {Links.map((link,index) => 
+          (
+            <div className={`d-flex p-3  align-items-center cursor-pointer ${styles.navItem} ${link.active ? styles.active: "" }`} key={index}>
+              <FontAwesomeIcon icon={link.icon} className={`me-3 fs-4 ${styles.icon}`} />
+              <h3 className={`m-0   ${styles.navTitle}`}>{link.title}</h3>
+            </div>
+          )
+        )}
       </ul>
     </aside>
-  )
+  );
 }
 
 export default Sidebar;
