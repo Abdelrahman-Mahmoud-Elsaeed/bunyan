@@ -6,21 +6,21 @@
 }
 
 .header {
-  color: #6882A1;
+  color: #6882a1;
 }
 
 .navItem {
-  background-color: rgba(255, 255, 255,0);
-  color: rgba(255, 255, 255,1);
+  background-color: rgba(255, 255, 255, 0);
+  color: rgba(255, 255, 255, 1);
   transition: background-color 0.1s ease-in-out;
 }
 
 .navItem:hover {
-  background-color: rgba(255, 255, 255,0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .active {
-  background-color: rgba(255, 255, 255,1) !important;
+  background-color: rgba(255, 255, 255, 1) !important;
 }
 
 .active .navTitle {
@@ -30,7 +30,6 @@
 .active .icon {
   color: #000;
 }
-
 
 .navTitle {
   font-family: "Montserrat";
@@ -44,8 +43,11 @@
 }
 
 .icon {
-  color:#fff;
+  color: #fff;
 }
+
+
+
 
 /* 
 position: absolute;
@@ -64,5 +66,4 @@ align-items: center;
 letter-spacing: 1px;
 text-transform: uppercase;
 
-color: #6882A1; */ 
-
+color: #6882A1; */

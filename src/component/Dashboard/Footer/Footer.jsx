@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer
       className={
-        `d-flex align-items-center justify-content-center  ${styles.footer} `
+        `d-flex align-items-center justify-content-center position-relative  ${styles.footer} `
       }
     >
       <div className="d-flex align-items-center justify-content-center  ">
