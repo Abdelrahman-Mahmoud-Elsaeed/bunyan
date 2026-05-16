@@ -22,8 +22,7 @@ function Sidebar({ isOpen }) {
     { title: "Website CMS", icon: faGlobe, path: "/website-cms" },
     { title: "Live Chat", icon: faCommentDots, path: "/live-chat" },
   ];
-  const { formData, hasDraftData } = useDraft();
-
+  const { drafts, hasDraftData } = useDraft();
   return (
     <aside className={`${styles.sidebar} ${isOpen ? "d-flex" : "d-none"}`}>
       <ul className={`list-unstyled w-100 ${styles.sidebarList}`}>
@@ -60,16 +59,28 @@ function Sidebar({ isOpen }) {
                   </h6>
                 </div>
                 <div className="small opacity-75">
-                  {formData.name && (
-                    <div className="text-truncate">
-                      <strong>Name:</strong> {formData.name}
-                    </div>
-                  )}
-                  {formData.email && (
-                    <div className="text-truncate">
-                      <strong>Email:</strong> {formData.email}
-                    </div>
-                  )}
+                  <div className="small opacity-75">
+                    {Object.entries(drafts || {}).map(([moduleKey, data]) => (
+                      <div key={moduleKey} className="mb-2">
+                        <strong className="text-warning text-capitalize">
+                          {moduleKey}
+                        </strong>
+
+                        <div className="small opacity-75">
+                          {Object.entries(data || {}).map(([key, value]) =>
+                            value ? (
+                              <div className="text-truncate" key={key}>
+                                <strong className="text-capitalize">
+                                  {key}:
+                                </strong>{" "}
+                                {value}
+                              </div>
+                            ) : null,
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
                 <div className="mt-2 pt-2 border-top border-secondary">
                   <small className="text-muted italic">
